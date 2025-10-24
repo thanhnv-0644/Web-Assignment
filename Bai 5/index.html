@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cửa hàng Sách ABC</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <h1>Cửa hàng Sách ABC</h1>
+      <nav>
+        <a href="#">Trang chủ</a>
+        <a href="#">Sản phẩm</a>
+        <a href="#">Liên hệ</a>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <!-- Giới thiệu -->
+      <section>
+        <h2>Giới thiệu</h2>
+        <p>
+          Chào mừng bạn đến với <strong>Cửa hàng Sách ABC</strong> – nơi chia sẻ
+          tri thức và niềm đam mê đọc sách! 📚
+        </p>
+      </section>
+
+      <!-- Danh sách sản phẩm -->
+      <section id="productsSection">
+        <h2>Sản phẩm nổi bật</h2>
+
+        <!-- KHU VỰC TÌM KIẾM + NÚT THÊM -->
+        <div class="toolbar">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Tìm kiếm sản phẩm..."
+          />
+          <button id="searchBtn">Tìm</button>
+          <button id="addProductBtn">Thêm sản phẩm</button>
+        </div>
+
+        <!-- FORM THÊM SẢN PHẨM (ẩn mặc định) -->
+        <form id="addProductForm" class="hidden add-form">
+          <h3>Thêm sản phẩm mới</h3>
+          <div id="errorMsg" style="color: red; margin-bottom: 10px"></div>
+
+          <label for="newName">Tên sách</label>
+          <input
+            type="text"
+            id="newName"
+            name="newName"
+            required
+            placeholder="VD: Sách ABC"
+          />
+
+          <label for="newImage">Ảnh (URL)</label>
+          <input
+            type="url"
+            id="newImage"
+            name="newImage"
+            placeholder="https://..."
+          />
+
+          <label for="newDesc">Mô tả</label>
+          <textarea
+            id="newDesc"
+            name="newDesc"
+            rows="3"
+            placeholder="Mô tả ngắn..."
+          ></textarea>
+
+          <label for="newPrice">Giá (đ)</label>
+          <input
+            type="number"
+            id="newPrice"
+            name="newPrice"
+            min="0"
+            step="1000"
+            placeholder="120000"
+            required
+          />
+
+          <div style="display: flex; gap: 10px; margin-top: 12px">
+            <button type="submit">Thêm</button>
+            <button type="button" id="cancelBtn">Hủy</button>
+          </div>
+        </form>
+
+        <!-- LIST SẢN PHẨM -->
+        <div id="productList">
+          <article class="product-item">
+            <h3 class="product-name">Sách: Nghĩ Như Một Chú Chó</h3>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHzODmNcoutu6izCnDlev5DF36uyNWb2OcUg&s"
+              alt="Nghĩ Như Một Chú Chó"
+            />
+            <p>Loài chó dạy ta sống hạnh phúc và thành công.</p>
+            <p><strong>Giá:</strong> 120.000₫</p>
+          </article>
+
+          <article class="product-item">
+            <h3 class="product-name">Sách: Lắng nghe như một chú chó</h3>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRShM9rZ6tv41FU3wkeBD-oX6yW5PK1rVAU1w&s"
+              alt="Sách Lắng nghe như một chú chó"
+            />
+            <p>
+              Lắng nghe như một chú chó để hiểu và kết nối sâu sắc hơn với những
+              người xung quanh.
+            </p>
+            <p><strong>Giá:</strong> 95.000₫</p>
+          </article>
+
+          <article class="product-item">
+            <h3 class="product-name">Sách: Mục đích sống của một chú chóm</h3>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXolGY01bgnnUjG0iTvEOgE7QkMVZvepOeMA&s"
+              alt="Sách Mục đích sống của một chú chóm"
+            />
+            <p>
+              Tìm kiếm và sống theo mục đích sống của bạn qua câu chuyện của một
+              chú chó.
+            </p>
+            <p><strong>Giá:</strong> 110.000₫</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Form liên hệ (bài 1) -->
+      <section>
+        <h2>Liên hệ với chúng tôi</h2>
+        <form>
+          <label for="name">Họ và tên:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Nội dung:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="submit">Gửi</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy; 2025 Cửa hàng Sách ABC | Địa chỉ: 123 Đường Tri Thức, Hà Nội</p>
+    </footer>
+
+    <!-- Nhúng JS ở cuối body -->
+    <script src="script.js"></script>
+  </body>
+</html>
